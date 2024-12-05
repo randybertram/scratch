@@ -1,5 +1,8 @@
 /*
-
+When migrating from Google Drive to a different cloud such as OneDrive,
+this utility sets the MS files (docx/xlsx/pptx) to the same modification date
+as the original Google files (gdoc/gsheet/gslides). Assumes you are using
+GoogleTakeout, which resets all modification dates.
 
 1. Copy the current Google Drive tree on your hard drive into another directory.
     This is your oneDrivePath; it will be copied to OneDrive when it is finished.
@@ -20,14 +23,12 @@
 5. Verify with a folder comparison tool like WinMerge.
 6. Move the oneDrivePath into your active OneDrive directory.
 
-> put this in github
-
 */
 
 // TODO: Make these into command parameters
 const oneDrivePath = 'C:\\Users\\Public\\Documents\\L-OneDrive';
 const takeoutPath = 'C:\\Users\\Public\\Documents\\L-Takeout'
-const reallyDoIt = true; // set false for testing
+const reallyDoIt = false; // set false for testing
 
 _numTransferred = _numMissing = 0;
 
